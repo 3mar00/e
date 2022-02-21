@@ -1,0 +1,265 @@
+/* all */
+:root
+{
+
+--c:#ffffff;
+--b1:#212121;
+--b2:#333363;
+--b3:#bec1ce;
+--b4:#bec1ce;
+--b5:#434381;
+}
+*
+{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    text-transform: capitalize;
+}
+@font-face{font-family:name; src:url(Name.ttf);}
+@font-face{font-family:gg; src:url(rr.ttf);}
+body
+{      
+    height:100vh;
+    width:100%;
+    background:linear-gradient(var(--b1),var(--b2));
+    flex-direction:column;
+}
+h3
+{
+    color:var(--c);
+    font-family: name;
+    font-size:3.5em;
+    letter-spacing:5px;
+    font-weight: 500;
+    text-transform: uppercase;
+    -webkit-text-stroke:var(--b5) 1px;
+}
+h3 span{
+    color:#1523e5;
+    text-transform: uppercase;
+}
+
+/* display:flex */
+.logo,.con-lo,.top-lis,.con-lis,
+.con-lisn
+,body,.lis
+{
+    display:flex;
+
+}
+/* logo */
+.logo
+{
+    justify-content:space-between;
+    padding:5px;
+    width:100%;
+    align-items:center;
+    background:var(--b2);
+}
+.con-lo p
+{
+color:var(--c);
+padding:10px;
+margin: 0 10px;
+background:var(--b1);
+cursor:pointer;
+border-radius:30px;
+letter-spacing:1px;
+font-weight:600;
+font-family: monospace;
+font-size:20px;
+opacity:0.6;
+transition:0.2s;
+}
+.s
+{
+
+    display:flex;
+    align-items:center;
+    justify-content:left;
+    padding:5px;
+    border-radius:50px;
+    width:70px;
+    background:var(--b1);
+    cursor:pointer;
+
+}
+.s img
+{
+    width:30px;
+    height:30px;
+}
+.con-lo .c
+{
+
+    transform:scale(105%);
+    background:var(--b1);
+    position:relative;
+    z-index:10;
+    opacity:1;
+    box-shadow:
+    0 0 5px var(--b4);
+}
+
+.con-lo p:hover
+{
+    transform:scale(110%);
+    opacity:1;
+    box-shadow:
+    0 0 10px var(--b3),
+    0 0 50px var(--b3),
+    0 0 100px var(--b3)
+    ;
+    position:relative;
+    z-index:10;
+    
+}
+
+/* list */
+.top-lis
+{
+    justify-content: center;
+}
+.top-lis h3
+{
+    margin:5px;
+    font-size:2.8rem;
+    flex:1;
+    color:var(--b2);
+    -webkit-text-stroke:var(--c) 1px;
+}
+.top-lis h3 span
+{
+    color:var(--b3);
+}
+.lis
+{
+    background:var(--b5);
+    flex-grow: 1;
+    height:100%;
+    flex-direction:column;
+    justify-content: space-between;
+
+}
+.con-lis p,
+.con-lisn p
+{
+
+width:8rem;
+color:var(--c);
+font-family: gg;
+letter-spacing:1px;
+
+}
+
+.con-lis,
+.con-lisn
+{
+    align-items:center;
+    background:var(--b2);
+    margin:15px;
+    opacity:1;
+    border-radius:4px;
+    cursor:pointer;
+
+}
+
+.con-lisn.c
+{
+    background:var(--b1);
+    box-shadow:0 0 10px var(--b1);
+    transform: scale(105%);
+    position: relative;
+    left: 5px;
+}
+
+.top-lis
+{
+    align-items: center;
+}
+.lis img
+{
+position:relative;
+}
+.con-lis:after
+{
+content:attr(data-text);
+position: absolute;
+font-family: gg;
+width:10%;
+font-size:1em;
+text-align:center;
+pointer-events:none;
+left:0;
+background:var(--b1);
+color:var(--c);
+border-radius:4px;
+padding:10px;
+display:none;
+
+}
+.lis div
+{
+    transition:0.3s;
+    
+}
+.con-lisn:hover
+{
+transform: scale(105%);
+opacity:1;
+position: relative;
+left: 5px;
+}
+
+
+
+.con-lis:hover:after
+{
+    display:block;
+    animation: a 0.3s linear forwards;
+    cursor:pointer;
+
+}
+@keyframes a 
+{
+    to{
+        left:10%
+    }
+}
+@keyframes w
+{
+  0%
+  {
+width:min-content;
+  }
+  100%
+  {
+width:40%;
+  }
+}
+@media (max-width:750px)
+{
+
+    .lis img
+    {
+        width:80px;
+        height:80px;
+    }
+    @keyframes w {
+        100%{
+
+            width:50%;
+
+        }
+    }
+    .ocn-lis
+    {
+        height: 8%;
+    }
+    .con-lisn p{
+    
+        font-size: 30px;
+    
+    }
+}
